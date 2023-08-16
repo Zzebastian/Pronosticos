@@ -2,6 +2,8 @@
 __pycache__/
 *.py[cod]
 *$py.class
+pronosticos.csv
+pronosticos1x2.csv
 
 # C extensions
 *.so

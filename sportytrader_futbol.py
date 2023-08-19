@@ -43,12 +43,12 @@ def version1x2(url, Elementos1x2, accion=1, filtro = 70):
     i += 1
 
   if accion in (1,5):
-    if os.path.exists('Pronosticos/CVS Files/pronosticos1x2.csv'):
+    if os.path.exists('Pronosticos/CVS Files/futbol.csv'):
       conf = True
     else:
       conf = False
 
-    with open('Pronosticos/CVS Files/pronosticos1x2.csv', 'a', newline='', encoding='utf-8') as f:
+    with open('Pronosticos/CVS Files/futbol.csv', 'a', newline='', encoding='utf-8') as f:
         writer = csv.writer(f, delimiter=',')
         
         if conf == False:
@@ -92,6 +92,7 @@ def versionProbabilidad(urlCuota, ElementoCuota, base, impresion=True):
     direcciones.append(diccionario)
     diccionario = {}
 
+
   if impresion == True:  
     col = 30
     for partido in encuentros:
@@ -101,8 +102,8 @@ def versionProbabilidad(urlCuota, ElementoCuota, base, impresion=True):
 #
 def pronYprobab():
   global encuentros, encuentrosProbabilidad
-  # SECCION - pronosticos - sportytrader - tenis
-  url = "https://www.sportytrader.com/es/pronosticos/tenis/"
+  # SECCION - pronosticos - sportytrader - futbol
+  url = "https://www.sportytrader.com/es/pronosticos/futbol/"
   Elementos1x2 = {'equipos': {'Links': {'class' : "mx-1 flex items-center dark:text-white"}, 'tag': 'span'},
                   'ganador': {'Links': {'class' :"flex justify-center items-center h-7 w-6 rounded-md font-semibold bg-primary-green text-white mx-1"}, 'tag': 'span'},
                   'probabilidad': {'Links': {'class' :"text-xs mt-1 dark:text-white"}, 'tag': 'span'},
@@ -110,8 +111,8 @@ def pronYprobab():
   }
   encuentros = version1x2(url, Elementos1x2, 5)
 
-  # SECCION - probabilidades - sportytrader - tenis
-  urlProbabilidad = "https://www.sportytrader.com/es/apuestas/tenis/"
+  # SECCION - probabilidades - sportytrader - futbol
+  urlProbabilidad = "https://www.sportytrader.com/es/apuestas/futbol/"
   ElementoProbabilidad = {'Links': {"class" : "font-medium w-full lg:w-1/2 text-center dark:text-white"}, 'tag': 'span'}
   base = 'https://www.sportytrader.com'
 

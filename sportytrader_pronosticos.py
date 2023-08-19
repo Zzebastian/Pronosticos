@@ -67,12 +67,12 @@ def versionPronosticos(accion=1):
       print(f'{partido["Enlace_Busqueda"]}')
   
   else:
-    if os.path.exists('Pronosticos/pronosticos.csv'):
+    if os.path.exists('Pronosticos/CVS Files/pronosticos.csv'):
       conf = True
     else:
       conf = False
 
-    with open('Pronosticos/pronosticos.csv', 'a', newline='', encoding='utf-8') as f:
+    with open('Pronosticos/CVS Files/pronosticos.csv', 'a', newline='', encoding='utf-8') as f:
         writer = csv.writer(f, delimiter=',')
         
         if conf == False:

@@ -1,8 +1,6 @@
 import csv, os
 os.system('cls')
 # -*- coding: utf-8 -*-
-# import pronosticosYcuotas
-# import pronosticosTenis
 
 def Ganador():
     
@@ -49,11 +47,18 @@ def Pronosticos():
 #
 
 
-FF = input('True (1) o False (0) ')
+FF = input('(1) Import All (2) Import pronósticos1x2 (0) Print Tenis ')
 if FF == '1':
     import sportytrader_pronosticos
     import sportytrader_apuestas
-Ganador()
-print('-----------------------')
-Pronosticos()
+    import sportytrader_futbol
+if FF in (0, 1):
+    Ganador()
+    print('-----------------------')
+    Pronosticos()
+else:
+    # import sportytrader_apuestas
+    print('---')
+    import sportytrader_futbol
+    
 
